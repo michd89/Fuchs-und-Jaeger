@@ -1,5 +1,4 @@
-from Python.PygameTest.FuchsUndJaeger.fuchsundjaeger import FuchsUndJaeger
-
+from .fuchsundjaeger import FuchsUndJaeger
 
 def main():
     game = FuchsUndJaeger()
