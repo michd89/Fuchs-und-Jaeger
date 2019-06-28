@@ -1,5 +1,6 @@
 from .fuchsundjaeger import FuchsUndJaeger
 
+
 def main():
     game = FuchsUndJaeger()
     game.new_game(2)
