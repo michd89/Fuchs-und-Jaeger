@@ -1,10 +1,10 @@
 # Fuchs und Jäger
 
-Fuchs und Jäger (german for "Fox and Hunters") is a game played on a chess board using chess pieces. The goal for the Fuchs (fox) is to break through the line of Jäger (hunters) while the Jägers' goal is catching the Fuchs.
+Fuchs und Jäger (german for "Fox and Hunters") is a game played on a chess board. The goal for the Fuchs (fox) is to break through the line of Jäger (hunters) while the Jägers' goal is catching the Fuchs.
 
 ## Prerequisites
 
-By now only a Python interpreter is needed. A future version might include a graphical interface using the PyGame library.
+By now a Python 3 interpreter is needed. A future version might include a graphical interface using the PyGame library.
 
 ## Rules
 
