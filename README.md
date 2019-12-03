@@ -4,7 +4,8 @@ Fuchs und Jäger (german for "Fox and Hunters", in english known as "Fox and Hou
 
 ## Prerequisites
 
-By now a Python 3 interpreter is needed. A future version might include a graphical interface using the PyGame library.
+* Python 3 interpreter
+* [PyGame](https://www.pygame.org) for the graphics mode
 
 ## Rules
 
@@ -15,3 +16,7 @@ By now a Python 3 interpreter is needed. A future version might include a graphi
 * The Jäger can move diagonally at the (from their point of view) forward direction for one square.
 * The Fuchs tries to reach the other end of the board and wins the game if all Jäger are passed.
 * The Jäger win if they made the Fuchs unable to move (by encircling or trapping at the edge of the board).
+
+## Copyright/Attribution Notice
+
+* "Colorful Chess Pieces" by Brian Provan licensed CC-BY 3.0, GPL 2.0, or GPL 3.0: https://opengameart.org/content/colorful-chess-pieces
