@@ -17,6 +17,12 @@ Fuchs und Jäger (german for "Fox and Hunters", in english known as "Fox and Hou
 * The Fuchs tries to reach the other end of the board and wins the game if all Jäger are passed.
 * The Jäger win if they made the Fuchs unable to move (by encircling or trapping at the edge of the board).
 
+## Usage
+
+The game is started by executing one of the following scripts:
+* `game_terminal.py` for playing the game in terminal mode.
+* `game_pygame.py` for playing in the graphics mode. This requires the `PyGame` library.
+
 ## Copyright/Attribution Notice
 
 * "Colorful Chess Pieces" by Brian Provan licensed CC-BY 3.0, GPL 2.0, or GPL 3.0: https://opengameart.org/content/colorful-chess-pieces
