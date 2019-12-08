@@ -77,6 +77,16 @@ def get_clicked_piece(pieceset, x, y):
     return None
 
 
+def handle_click(square_rects, selected_square, target_square):
+    for x, i in zip(square_rects, range(8)):
+        for y, j in zip(x, range(8)):
+            if y.collidepoint(pygame.mouse.get_pos()):  # Clicked at square (i, j)
+                if not selected_square:
+                    return (i, j), target_square
+                else:
+                    return selected_square, (i, j)
+
+
 def main():
     pygame.init()
     clock = pygame.time.Clock()
@@ -107,15 +117,8 @@ def main():
                 continue
 
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
-                for x, i in zip(square_rects, range(8)):
-                    for y, j in zip(x, range(8)):
-                        if y.collidepoint(pygame.mouse.get_pos()):  # Clicked at square (i, j)
-                            if not selected_square:
-                                selected_square = (i, j)
-                            else:
-                                target_square = (i, j)
-        if done:
-            break
+                selected_square, target_square = \
+                    handle_click(square_rects, selected_square, target_square)
 
         # Game logic
         if selected_square:
