@@ -15,8 +15,7 @@ class PieceType(object):
 class PieceSet:
     def __init__(self):
         self.image = pygame.image.load('chess.png').convert_alpha()
-        self.image = pygame.transform.scale(self.image,
-                                            (int(768 / 2), int(1536 / 2)))
+        self.image = pygame.transform.scale(self.image, (int(768 / 2), int(1536 / 2)))
         self.piece_tile_list = list()
 
     def add_piece_tile(self, piece, start_x, start_y):
@@ -47,8 +46,7 @@ def draw_chessboard(screen, game, font):
     for x in range(len(game.board.squares)):
         for y in range(len(game.board.squares[x])):
             color = WHITE if (x + y) % 2 == 0 else BLACK
-            pygame.draw.rect(screen, color,
-                             (103 + 50 * x, 103 + 50 * y, 50, 50), 0)
+            pygame.draw.rect(screen, color, (103 + 50 * x, 103 + 50 * y, 50, 50), 0)
     # Coordinate labels
     for i, letter in enumerate(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']):
         text = font.render(letter, True, WHITE)
@@ -68,8 +66,7 @@ def get_tile_start(pos_x, pos_y):
 
 def draw_pieces(screen, pieceset):
     for piece_tile in pieceset.get_piece_tiles():
-        piece_tile_start = get_tile_start(piece_tile.piece.pos_x,
-                                          piece_tile.piece.pos_y)
+        piece_tile_start = get_tile_start(piece_tile.piece.pos_x, piece_tile.piece.pos_y)
         screen.blit(pieceset.image, piece_tile_start, piece_tile.rect)
 
 
@@ -92,8 +89,7 @@ def main():
     game = FuchsUndJaeger()
     game.new_game(2)
     square_rects = [
-        [pygame.Rect((103 + 50 * x, 103 + 50 * y), (50, 50)) for y in range(8)]
-        for x in range(8)]
+        [pygame.Rect((103 + 50 * x, 103 + 50 * y), (50, 50)) for y in range(8)] for x in range(8)]
     selected_square = None
     target_square = None
     pieceset = init_pieceset(game)
@@ -113,8 +109,7 @@ def main():
             if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 for x, i in zip(square_rects, range(8)):
                     for y, j in zip(x, range(8)):
-                        if y.collidepoint(
-                                pygame.mouse.get_pos()):  # Clicked at square (i, j)
+                        if y.collidepoint(pygame.mouse.get_pos()):  # Clicked at square (i, j)
                             if not selected_square:
                                 selected_square = (i, j)
                             else:
@@ -129,7 +124,7 @@ def main():
                 if game.state == 'J':
                     # TODO: Optimize moving Jaeger (or moving in general)
                     for x, i in zip(square_rects, range(8)):
-                        for y, j in zip(x, range(8)):
+                        for _, _ in zip(x, range(8)):
                             for jaeger, jaeger_no in zip(game.jaeger, range(4)):
                                 if (jaeger.pos_x, jaeger.pos_y) == selected_square:
                                     j_no = jaeger_no
@@ -143,10 +138,8 @@ def main():
         draw_chessboard(screen, game, font)
         draw_pieces(screen, pieceset)
         if selected_square:
-            pygame.draw.rect(screen, (0, 200, 0),
-                             (103 + 50 * selected_square[0],
-                              103 + 50 * selected_square[1],
-                              50, 50), 4)
+            pygame.draw.rect(screen, (0, 200, 0), (
+            103 + 50 * selected_square[0], 103 + 50 * selected_square[1], 50, 50), 4)
         if game.state == 'F':
             state = 'Turn Fuchs'
         elif game.state == 'J':
@@ -163,8 +156,6 @@ def main():
 
         # Limit frame rate
         clock.tick(60)
-
-        # game.board.print_board()
 
     pygame.quit()
 
