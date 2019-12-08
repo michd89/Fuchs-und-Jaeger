@@ -142,7 +142,7 @@ def main():
         draw_pieces(screen, pieceset)
         if selected_square:
             pygame.draw.rect(screen, (0, 200, 0), (
-            103 + 50 * selected_square[0], 103 + 50 * selected_square[1], 50, 50), 4)
+                103 + 50 * selected_square[0], 103 + 50 * selected_square[1], 50, 50), 4)
         if game.state == 'F':
             state = 'Turn Fuchs'
         elif game.state == 'J':
