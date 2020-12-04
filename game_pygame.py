@@ -123,7 +123,7 @@ def handle_click(square_rects, selected_square, target_square):
 def main():
     pygame.init()
     clock = pygame.time.Clock()
-    screen = pygame.display.set_mode((600, 600))
+    screen = pygame.display.set_mode((screen_size, screen_size))
     pygame.display.set_caption("Fuchs und Jäger")
     font = pygame.font.SysFont('Courier New', 20, False, False)
     done = False
