@@ -5,20 +5,21 @@ from fuchsundjaeger import FuchsUndJaeger
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 
+screen_size = 600
 piece_size = 64
-tile_size = 50
+tile_size = int(screen_size / 12)
+border_thickness = int(screen_size / 100)  # Standard: 6
 
-border_start_x = 100
-border_start_y = 100
-border_width = 406
-border_height = 406
-border_thickness = 6  # May cause display errors if odd
+border_start_x = int(screen_size / 6)
+border_start_y = int(screen_size / 6)
+border_width = int(screen_size * 2 / 3) + border_thickness
+border_height = int(screen_size * 2 / 3) + border_thickness
 
 tiles_start_x = int(border_start_x + border_thickness / 2)
 tiles_start_y = int(border_start_y + border_thickness / 2)
 
 letter_width = 12  # Estimated, to put every letter roughly at the middle
-# letter_height = ???
+# letter_height = ???  # TODO
 text_distance = 10  # Distance of text from board
 
 
@@ -42,9 +43,6 @@ class PieceSet:
 
     def add_piece_tile(self, piece, start_x, start_y):
         self.piece_tile_list.append(PieceType(piece, start_x, start_y))
-
-    def get_piece_tile(self, num):
-        return self.piece_tile_list(num)
 
     def get_piece_tiles(self):
         for piece in self.piece_tile_list:
