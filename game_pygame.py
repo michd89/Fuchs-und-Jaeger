@@ -5,7 +5,7 @@ from fuchsundjaeger import FuchsUndJaeger
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 
-peice_size = 64
+piece_size = 64
 tile_size = 50
 
 border_start_x = 100
@@ -24,7 +24,7 @@ text_distance = 10  # Distance of text from board
 
 class PieceType(object):
     def __init__(self, piece, start_x, start_y):
-        self.rect = pygame.rect.Rect(start_x, start_y, peice_size, peice_size)
+        self.rect = pygame.rect.Rect(start_x, start_y, piece_size, piece_size)
         self.piece = piece
 
 
@@ -53,11 +53,11 @@ class PieceSet:
 
 def init_pieceset(game):
     pieces = PieceSet()
-    pieces.add_piece_tile(game.fuchs, peice_size, peice_size * 2)  # In chess.png the knight is to the right of the pawn
-    pieces.add_piece_tile(game.jaeger[0], 0, peice_size)
-    pieces.add_piece_tile(game.jaeger[1], 0, peice_size)
-    pieces.add_piece_tile(game.jaeger[2], 0, peice_size)
-    pieces.add_piece_tile(game.jaeger[3], 0, peice_size)
+    pieces.add_piece_tile(game.fuchs, piece_size, piece_size * 2)  # In chess.png the knight is to the right of the pawn
+    pieces.add_piece_tile(game.jaeger[0], 0, piece_size)
+    pieces.add_piece_tile(game.jaeger[1], 0, piece_size)
+    pieces.add_piece_tile(game.jaeger[2], 0, piece_size)
+    pieces.add_piece_tile(game.jaeger[3], 0, piece_size)
     return pieces
 
 
